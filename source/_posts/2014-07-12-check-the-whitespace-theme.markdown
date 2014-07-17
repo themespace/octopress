@@ -24,31 +24,39 @@ Slightly customized: [Chymeric Tutorials](http://chymeric.eu), [Yous' Blog](http
 
 Install
 -------
-    $ cd octopress
-    $ git clone git://github.com/lucaslew/whitespace.git .themes/whitespace
-    $ rake install['whitespace']
-    $ rake generate
+
+``` sh
+$ cd octopress
+$ git clone git://github.com/lucaslew/whitespace.git .themes/whitespace
+$ rake install['whitespace']
+$ rake generate
+```
 
 
 Update
 ------
-    $ cd octopress/.themes/whitespace
-    $ git pull
-    $ rake install['whitespace']
-    $ rake generate
+
+``` sh
+$ cd octopress/.themes/whitespace
+$ git pull
+$ rake install['whitespace']
+$ rake generate
+```
 
 
 Update and Keep Customizations
 ------------------------------
 *For this to work, you have to track your website theme customizations on a remote (we call it ```mywebsiterepo```).*
 
-    $ cd octopress/.themes/whitespace
-    $ git pull
-    $ rake install['whitespace']
-    $ cd ../..
-    $ git fetch --all
-    $ git reset --hard mywebsiterepo/master
-    $ rake generate
+``` sh
+$ cd octopress/.themes/whitespace
+$ git pull
+$ rake install['whitespace']
+$ cd ../..
+$ git fetch --all
+$ git reset --hard mywebsiterepo/master
+$ rake generate
+```
 
 
 Comment System
@@ -71,11 +79,13 @@ External URL
 ------------
 You can write a [Linklog](http://en.wikipedia.org/wiki/Linklog) by using this theme. To publish a linked post, just add `external-url` variable in the YAML front matter of your post.
 
-    ---
-    layout: post
-    ...
-    external-url: http://example.com/some/external/url
-    ---
+``` yaml
+---
+layout: post
+...
+external-url: http://example.com/some/external/url
+---
+```
 
 Then the title will have '&rarr;' at the end. Also the title link will point to the external url.
 
