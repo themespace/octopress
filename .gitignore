@@ -11,7 +11,3 @@ source/_stash
 source/stylesheets/screen.css
 vendor
 node_modules
-
-# Theme
-sass
-source
