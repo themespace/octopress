@@ -1,0 +1,80 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+# <theme>
+unless ARGV[0]
+  puts "Usage: #{File.basename(__FILE__)} <theme>"
+  exit
+end
+branch = "gh-pages"
+project = ARGV[0].sub(/(\/*)(.+)/, "\\2").sub(/\/$/, '');
+theme_dir = "/" + project
+base_dir = File.join(File.dirname(__FILE__), "..")
+
+# Rakefile
+#
+# public_dir: public/<theme>
+# deploy_branch: gh-pages
+# deploy_default: push
+# deploy_dir: _deploy_<theme>
+rakefile_path = File.join(base_dir, "Rakefile")
+rakefile = IO.read(rakefile_path)
+
+rakefile.sub!(/public_dir(\s*)=(\s*)(["'])[\w\-\/]*["']/, "public_dir\\1=\\2\\3public#{theme_dir}\\3")
+rakefile.sub!(/deploy_branch(\s*)=(\s*)(["'])[\w-]*["']/, "deploy_branch\\1=\\2\\3#{branch}\\3")
+rakefile.sub!(/deploy_default(\s*)=(\s*)(["'])[\w-]*["']/, "deploy_default\\1=\\2\\3push\\3")
+rakefile.sub!(/deploy_dir(\s*)=(\s*)(["'])[\w\-\/]*["']/, "deploy_dir\\1=\\2\\3_deploy_#{project}\\3")
+deploy_dir = File.join(base_dir, "_deploy_#{project}")
+unless File.exists?(deploy_dir)
+  Dir.mkdir(deploy_dir)
+  Dir.chdir("#{deploy_dir}") do
+    system "git init"
+    system "echo 'My Octopress Page is coming soon &hellip;' > index.html"
+    system "git add ."
+    system "git commit -m \"Octopress init\""
+    system "git branch -m gh-pages" unless branch == "master"
+    system "git remote add origin git@github.com:themespace/#{project}.git"
+  end
+end
+
+File.open(rakefile_path, "w") do |f|
+  f.write rakefile
+end
+
+# config.rb
+#
+# http_path: /<theme>/
+# http_images_path: /<theme>/images
+# http_fonts_path: /<theme>/fonts
+# css_dir: public/<theme>/stylesheets
+compass_config_path = File.join(base_dir, "config.rb")
+compass_config = IO.read(compass_config_path)
+
+compass_config.sub!(/http_path(\s*)=(\s*)(["'])[\w\-\/]*["']/, "http_path\\1=\\2\\3#{theme_dir}/\\3")
+compass_config.sub!(/http_images_path(\s*)=(\s*)(["'])[\w\-\/]*["']/, "http_images_path\\1=\\2\\3#{theme_dir}/images\\3")
+compass_config.sub!(/http_fonts_path(\s*)=(\s*)(["'])[\w\-\/]*["']/, "http_fonts_path\\1=\\2\\3#{theme_dir}/fonts\\3")
+compass_config.sub!(/css_dir(\s*)=(\s*)(["'])[\w\-\/]*["']/, "css_dir\\1=\\2\\3public#{theme_dir}/stylesheets\\3")
+
+File.open(compass_config_path, "w") do |f|
+  f.write compass_config
+end
+
+# _config.yml
+#
+# destination: public/<theme>
+# subscribe_rss: /<theme>/atom.xml
+# root: /<theme>
+# url: http://themespace.github.io/<theme>
+jekyll_config_path = File.join(base_dir, "_config.yml")
+jekyll_config = IO.read(jekyll_config_path)
+
+jekyll_config.sub!(/^destination:.+$/, "destination: public#{theme_dir}")
+jekyll_config.sub!(/^subscribe_rss:\s*\/.+$/, "subscribe_rss: #{theme_dir}/atom.xml")
+jekyll_config.sub!(/^root:.*$/, "root: /#{theme_dir.sub(/^\//, '')}")
+jekyll_config.sub!(/^url:.*$/, "url: http://themespace.github.io/#{project}")
+
+File.open(jekyll_config_path, "w") do |f|
+  f.write jekyll_config
+end
+
+puts "## Now you can deploy to git@github.com:themespace/#{project}.git with `rake deploy` ##"
