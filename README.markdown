@@ -43,9 +43,7 @@ Then you can deploy to `gh-pages` branch of `github.com/themespace/<theme>` repo
 If you have deployed sites from another machine already, you have to clone it to `_deploy_<theme>`:
 
 ``` sh
-git clone git@github.com:themespace/<theme> _deploy_<theme>
-cd _deploy_<theme>
-git checkout gh-pages
+git clone -b gh-pages git@github.com:themespace/<theme> _deploy_<theme>
 ```
 
 ## License
