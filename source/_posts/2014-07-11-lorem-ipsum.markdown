@@ -8,7 +8,17 @@ categories: Lorem
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut magna eget erat fermentum dignissim. Aenean interdum ultrices sapien. Vestibulum feugiat ultrices neque, vel pretium massa. Etiam tempor luctus dui eget aliquam. In nec metus sit amet orci facilisis pretium. Vivamus venenatis ac mi sit amet tristique. Proin accumsan adipiscing dui, sed laoreet metus. Morbi nulla risus, pharetra vel placerat eu, dignissim ac ante. Curabitur id dignissim lectus.
 
+```python
+def func10(arg65, arg66):
+    var67 = 0
+    for var68 in xrange(19):
+        var67 += arg65 & arg66 + var67
+    return var67
+```
+
 Duis dictum massa nec tellus varius placerat. Nunc eu tortor sapien. Curabitur ultrices at ligula id elementum. Cras at nisi vel sapien elementum sagittis. Pellentesque tempor vitae nisl dignissim consequat. Ut ut leo at eros venenatis cursus. Aenean et quam magna.
+
+<!-- more -->
 
 Sed ac tristique felis. Aenean porta a sem in imperdiet. Praesent imperdiet venenatis ante, ut sollicitudin nulla feugiat a. Proin vehicula tellus sit amet imperdiet viverra. Nullam cursus eu neque et egestas. Donec lacinia ornare libero, in cursus sem luctus sit amet. Suspendisse nunc mauris, placerat id interdum quis, molestie vitae leo. Phasellus aliquam at libero sed vehicula. Sed posuere ornare nunc vel gravida. Curabitur et libero dignissim, tempus risus a, adipiscing nunc. Aenean consequat libero nibh, ac luctus ipsum pulvinar in.
 
