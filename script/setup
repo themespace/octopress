@@ -33,7 +33,7 @@ unless File.exists?(deploy_dir)
     system "git add ."
     system "git commit -m \"Octopress init\""
     system "git branch -m gh-pages" unless branch == "master"
-    system "git remote add origin git@github.com:themespace/#{project}.git"
+    system "git remote add origin https://github.com/themespace/#{project}.git"
   end
 end
 
