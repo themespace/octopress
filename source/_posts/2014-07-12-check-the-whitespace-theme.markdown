@@ -1,19 +1,18 @@
 ---
 layout: post
-title: "Check out the Whitespace Theme README"
+title: "Whitespace Theme Demo"
 date: 2014-07-12 04:53:44 +0000
 comments: false
 categories: Whitespace
-external-url: https://github.com/lucaslew/whitespace
 ---
 
-This is the [Themespace](https://github.com/themespace) demo blog of the Whitespace theme (for [Octopress](http://octopress.org/)).
-Click "Read On" to find out more.
-All *other* posts on this website are auto-generated text and code to showcase its appearance.
+This is the [Themespace](https://github.com/themespace) demo blog of the [Whitespace theme](https://github.com/lucaslew/whitespace) (for [Octopress](http://octopress.org/)).
+*All other content* on this website is auto-generated text and code to showcase its appearance.
+
+Sed ac tristique felis. Aenean porta a sem in imperdiet. Praesent imperdiet venenatis ante, ut sollicitudin nulla feugiat a. Proin vehicula tellus sit amet imperdiet viverra. Nullam cursus eu neque et egestas. Donec lacinia ornare libero, in cursus sem luctus sit amet. Suspendisse nunc mauris, placerat id interdum quis, molestie vitae leo. Phasellus aliquam at libero sed vehicula. Sed posuere ornare nunc vel gravida. Curabitur et libero dignissim, tempus risus a, adipiscing nunc. Aenean consequat libero nibh, ac luctus ipsum pulvinar in.
 
 <!-- more -->
 
-**This first post is a link post.
-Click the title to navigate to the theme's GitHub repository - where you can also find links to real blogs using slightly customized versions of Whitespace.**
+Sed ac tristique felis. Aenean porta a sem in imperdiet. Praesent imperdiet venenatis ante, ut sollicitudin nulla feugiat a. Proin vehicula tellus sit amet imperdiet viverra. Nullam cursus eu neque et egestas. Donec lacinia ornare libero, in cursus sem luctus sit amet. Suspendisse nunc mauris, placerat id interdum quis, molestie vitae leo. Phasellus aliquam at libero sed vehicula. Sed posuere ornare nunc vel gravida. Curabitur et libero dignissim, tempus risus a, adipiscing nunc. Aenean consequat libero nibh, ac luctus ipsum pulvinar in.
 
 
