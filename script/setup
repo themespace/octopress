@@ -2,12 +2,13 @@
 # encoding: utf-8
 
 # <theme>
-unless ARGV[0]
-  puts "Usage: #{File.basename(__FILE__)} <theme>"
+unless ARGV[1]
+  puts "Usage: #{File.basename(__FILE__)} <theme-author-account> <theme-name>"
+  puts "Example: #{File.basename(__FILE__)} lucaslew whitespace"
   exit
 end
 branch = "gh-pages"
-project = ARGV[0].sub(/(\/*)(.+)/, "\\2").sub(/\/$/, '');
+project = ARGV[1].sub(/(\/*)(.+)/, "\\2").sub(/\/$/, '');
 theme_dir = "/" + project
 base_dir = File.join(File.dirname(__FILE__), "..")
 
@@ -75,6 +76,17 @@ jekyll_config.sub!(/^url:.*$/, "url: http://themespace.github.io/#{project}")
 
 File.open(jekyll_config_path, "w") do |f|
   f.write jekyll_config
+end
+
+# example post
+example_post_path = File.join(base_dir, "source/_posts/2014-07-12-theme-demo.markdown")
+example_post = IO.read(example_post_path)
+
+example_post.sub!(/^title:.+$/, "title: \""+ARGV[1]+" Theme Demo")
+example_post.sub!(/^demo blog of the.+$/, "demo blog of the ["+ARGV[1]+" theme](https://github.com/"+ARGV[0]+"/"+ARGV[1]+")")
+
+File.open(example_post_path, "w") do |f|
+  f.write example_post
 end
 
 puts "## Now you can deploy to git@github.com:themespace/#{project}.git with `rake deploy` ##"
