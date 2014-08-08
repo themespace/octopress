@@ -82,7 +82,7 @@ end
 example_post_path = File.join(base_dir, "source/_posts/2014-07-12-theme-demo.markdown")
 example_post = IO.read(example_post_path)
 
-example_post.sub!(/^title:.+$/, "title: \""+ARGV[1]+" Theme Demo")
+example_post.sub!(/^title:.+$/, "title: \""+ARGV[1]+" Theme Demo\"")
 example_post.sub!(/^demo blog of the.+$/, "demo blog of the ["+ARGV[1]+" theme](https://github.com/"+ARGV[0]+"/"+ARGV[1]+")")
 
 File.open(example_post_path, "w") do |f|
