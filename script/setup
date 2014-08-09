@@ -89,4 +89,4 @@ File.open(example_post_path, "w") do |f|
   f.write example_post
 end
 
-puts "## Now you can deploy to git@github.com:themespace/#{project}.git with `rake deploy` ##"
+puts "## Now you can deploy to https://github.com/themespace/#{project}.git with `rake deploy` ##"
