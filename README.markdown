@@ -7,8 +7,10 @@ This is clone of [Octopress][] containing our themes for showcase.
 ## Themes
 
 - [Whitespace][] ([Preview](http://themespace.github.io/whitespace/))
+- [Koenigspress][] ([Preview](http://themespace.github.io/Koenigspress/))
 
 [Whitespace]: https://github.com/lucaslew/whitespace
+[Koenigspress]: https://github.com/TheChymera/Koenigspress
 
 ## How to Setup Theme
 
@@ -50,3 +52,4 @@ git clone -b gh-pages git@github.com:themespace/<theme-name> _deploy_<theme-name
 
 - [Octopress](https://github.com/imathis/octopress#license)
 - [Whitespace](https://github.com/lucaslew/whitespace#license)
+- [Koenigspress](https://github.com/TheChymera/Koenigspress#meta)
