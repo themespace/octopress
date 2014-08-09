@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Koenigspress Theme Demo
+title: "whitespace Theme Demo"
 date: 2014-07-12 04:53:44 +0000
 comments: false
 categories: preview, content
 ---
 
 This is the [Themespace](https://github.com/themespace)
-demo blog of the [Koenigspress theme](https://github.com/TheChymera/Koenigspress)
+demo blog of the [whitespace theme](https://github.com/lucaslew/whitespace)
 (for [Octopress](http://octopress.org/)).
 *All other content* on this website is auto-generated text and code to showcase its appearance.
 
