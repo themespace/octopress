@@ -8,7 +8,7 @@ This is clone of [Octopress][] containing our themes for showcase.
 
 - [Whitespace][] ([Preview](http://themespace.github.io/whitespace/))
 
-[Whitespace]: https://github.com/themespace/whitespace
+[Whitespace]: https://github.com/lucaslew/whitespace
 
 ## How to Setup Theme
 
@@ -49,4 +49,4 @@ git clone -b gh-pages git@github.com:themespace/<theme> _deploy_<theme>
 ## License
 
 - [Octopress](https://github.com/imathis/octopress#license)
-- [Whitespace](https://github.com/themespace/whitespace#license)
+- [Whitespace](https://github.com/lucaslew/whitespace#license)
