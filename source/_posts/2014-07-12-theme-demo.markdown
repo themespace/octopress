@@ -3,7 +3,9 @@ layout: post
 title: "whitespace Theme Demo"
 date: 2014-07-12 04:53:44 +0000
 comments: false
-categories: preview, content
+categories:
+    - preview
+    - content
 ---
 
 This is the [Themespace](https://github.com/themespace)
