@@ -13,6 +13,15 @@ project = ARGV[1].sub(/(\/*)(.+)/, "\\2").sub(/\/$/, '');
 theme_dir = "/" + project
 base_dir = File.join(File.dirname(__FILE__), "..")
 
+# .themes/<theme-name>
+if File.exist?(".themes/#{project}")
+  puts "## Pulling any updates from theme"
+  system "git -C .themes/#{project} pull"
+else
+  puts "## Cloning theme into .themes/#{project}"
+  system "git clone https://github.com/#{author}/#{project}.git .themes/#{project}"
+end
+
 # Rakefile
 #
 # public_dir: public/<theme-name>
