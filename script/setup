@@ -8,6 +8,7 @@ unless ARGV[1]
   exit
 end
 branch = "gh-pages"
+author = ARGV[0]
 project = ARGV[1].sub(/(\/*)(.+)/, "\\2").sub(/\/$/, '');
 theme_dir = "/" + project
 base_dir = File.join(File.dirname(__FILE__), "..")
@@ -78,12 +79,12 @@ File.open(jekyll_config_path, "w") do |f|
   f.write jekyll_config
 end
 
-# example post
+# Example post
 example_post_path = File.join(base_dir, "source/_posts/2014-07-12-theme-demo.markdown")
 example_post = IO.read(example_post_path)
 
-example_post.sub!(/^title:.+$/, "title: \""+ARGV[1]+" Theme Demo\"")
-example_post.sub!(/^demo blog of the.+$/, "demo blog of the ["+ARGV[1]+" theme](https://github.com/"+ARGV[0]+"/"+ARGV[1]+")")
+example_post.sub!(/^title:.+$/, "title: \"#{project} Theme Demo\"")
+example_post.sub!(/^demo blog of the.+$/, "demo blog of the [#{project} theme](https://github.com/#{author}/#{project})")
 
 File.open(example_post_path, "w") do |f|
   f.write example_post
