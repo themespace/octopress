@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
-# <theme>
+# <theme-author-account> <theme-name>
 unless ARGV[1]
   puts "Usage: #{File.basename(__FILE__)} <theme-author-account> <theme-name>"
   puts "Example: #{File.basename(__FILE__)} lucaslew whitespace"
@@ -14,10 +14,10 @@ base_dir = File.join(File.dirname(__FILE__), "..")
 
 # Rakefile
 #
-# public_dir: public/<theme>
+# public_dir: public/<theme-name>
 # deploy_branch: gh-pages
 # deploy_default: push
-# deploy_dir: _deploy_<theme>
+# deploy_dir: _deploy_<theme-name>
 rakefile_path = File.join(base_dir, "Rakefile")
 rakefile = IO.read(rakefile_path)
 
@@ -44,10 +44,10 @@ end
 
 # config.rb
 #
-# http_path: /<theme>/
-# http_images_path: /<theme>/images
-# http_fonts_path: /<theme>/fonts
-# css_dir: public/<theme>/stylesheets
+# http_path: /<theme-name>/
+# http_images_path: /<theme-name>/images
+# http_fonts_path: /<theme-name>/fonts
+# css_dir: public/<theme-name>/stylesheets
 compass_config_path = File.join(base_dir, "config.rb")
 compass_config = IO.read(compass_config_path)
 
@@ -62,10 +62,10 @@ end
 
 # _config.yml
 #
-# destination: public/<theme>
-# subscribe_rss: /<theme>/atom.xml
-# root: /<theme>
-# url: http://themespace.github.io/<theme>
+# destination: public/<theme-name>
+# subscribe_rss: /<theme-name>/atom.xml
+# root: /<theme-name>
+# url: http://themespace.github.io/<theme-name>
 jekyll_config_path = File.join(base_dir, "_config.yml")
 jekyll_config = IO.read(jekyll_config_path)
 

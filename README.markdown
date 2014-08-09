@@ -12,38 +12,38 @@ This is clone of [Octopress][] containing our themes for showcase.
 
 ## How to Setup Theme
 
-To setup the theme which is called `<theme>`, run `script/setup <theme>`. Then it modifies files below.
+To setup the theme which is written by `<theme-author-account>` and called `<theme-name>`, run `script/setup <theme-author-account> <theme-name>`. Then it modifies files below.
 
 - [Rakefile](Rakefile):
     ```
-    public_dir: public/<theme>
+    public_dir: public/<theme-name>
     deploy_branch: gh-pages
     deploy_default: push
-    deploy_dir: _deploy_<theme>
+    deploy_dir: _deploy_<theme-name>
     ```
 
 - [config.rb](config.rb):
     ```
-    http_path: /<theme>/
-    http_images_path: /<theme>/images
-    http_fonts_path: /<theme>/fonts
-    css_dir: public/<theme>/stylesheets
+    http_path: /<theme-name>/
+    http_images_path: /<theme-name>/images
+    http_fonts_path: /<theme-name>/fonts
+    css_dir: public/<theme-name>/stylesheets
     ```
 
 - [_config.yml](_config.yml):
     ```
-    destination: public/<theme>
-    subscribe_rss: /<theme>/atom.xml
-    root: /<theme>
-    url: http://themespace.github.io/<theme>
+    destination: public/<theme-name>
+    subscribe_rss: /<theme-name>/atom.xml
+    root: /<theme-name>
+    url: http://themespace.github.io/<theme-name>
     ```
 
-Then you can deploy to `gh-pages` branch of `github.com/themespace/<theme>` repository.
+Then you can deploy to `gh-pages` branch of `github.com/themespace/<theme-name>` repository.
 
 If you have deployed sites from another machine already, you have to clone it to `_deploy_<theme>`:
 
 ``` sh
-git clone -b gh-pages git@github.com:themespace/<theme> _deploy_<theme>
+git clone -b gh-pages git@github.com:themespace/<theme-name> _deploy_<theme-name>
 ```
 
 ## License
