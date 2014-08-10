@@ -37,14 +37,20 @@ rakefile.sub!(/deploy_default(\s*)=(\s*)(["'])[\w-]*["']/, "deploy_default\\1=\\
 rakefile.sub!(/deploy_dir(\s*)=(\s*)(["'])[\w\-\/]*["']/, "deploy_dir\\1=\\2\\3_deploy_#{project}\\3")
 deploy_dir = File.join(base_dir, "_deploy_#{project}")
 unless File.exists?(deploy_dir)
-  Dir.mkdir(deploy_dir)
-  Dir.chdir("#{deploy_dir}") do
-    system "git init"
-    system "echo 'My Octopress Page is coming soon &hellip;' > index.html"
-    system "git add ."
-    system "git commit -m \"Octopress init\""
-    system "git branch -m gh-pages" unless branch == "master"
-    system "git remote add origin https://github.com/themespace/#{project}.git"
+  puts "## Checking #{branch} branch of themespace/#{project}"
+  system "git ls-remote --heads --exit-code https://github.com/themespace/#{project}.git #{branch}"
+  if $?.exitstatus == 0
+    system "git clone -b gh-pages https://github.com/themespace/#{project}.git #{deploy_dir}"
+  else
+    Dir.mkdir(deploy_dir)
+    Dir.chdir("#{deploy_dir}") do
+      system "git init"
+      system "echo 'My Octopress Page is coming soon &hellip;' > index.html"
+      system "git add ."
+      system "git commit -m \"Octopress init\""
+      system "git branch -m gh-pages" unless branch == "master"
+      system "git remote add origin https://github.com/themespace/#{project}.git"
+    end
   end
 end
 
