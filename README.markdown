@@ -38,6 +38,8 @@ To setup the theme which is written by `<theme-author-account>` and called `<the
     subscribe_rss: /<theme-name>/atom.xml
     root: /<theme-name>
     url: http://themespace.github.io/<theme-name>
+    author: Themespace
+    github_user: themespace
     ```
 
 Then you can deploy to `gh-pages` branch of `github.com/themespace/<theme-name>` repository.

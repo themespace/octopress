@@ -82,6 +82,8 @@ end
 # subscribe_rss: /<theme-name>/atom.xml
 # root: /<theme-name>
 # url: http://themespace.github.io/<theme-name>
+# author: Themespace
+# github_user: themespace
 jekyll_config_path = File.join(base_dir, "_config.yml")
 jekyll_config = IO.read(jekyll_config_path)
 
@@ -89,6 +91,8 @@ jekyll_config.sub!(/^destination:.+$/, "destination: public#{theme_dir}")
 jekyll_config.sub!(/^subscribe_rss:\s*\/.+$/, "subscribe_rss: #{theme_dir}/atom.xml")
 jekyll_config.sub!(/^root:.*$/, "root: /#{theme_dir.sub(/^\//, '')}")
 jekyll_config.sub!(/^url:.*$/, "url: http://themespace.github.io/#{project}")
+jekyll_config.sub!(/^author:.*$/, "author: Themespace")
+jekyll_config.sub!(/^github_user:.*$/, "github_user: themespace")
 
 File.open(jekyll_config_path, "w") do |f|
   f.write jekyll_config
