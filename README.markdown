@@ -42,12 +42,6 @@ To setup the theme which is written by `<theme-author-account>` and called `<the
 
 Then you can deploy to `gh-pages` branch of `github.com/themespace/<theme-name>` repository.
 
-If you have deployed sites from another machine already, you have to clone it to `_deploy_<theme>`:
-
-``` sh
-git clone -b gh-pages git@github.com:themespace/<theme-name> _deploy_<theme-name>
-```
-
 ## License
 
 - [Octopress](https://github.com/imathis/octopress#license)
