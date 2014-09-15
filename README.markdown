@@ -42,14 +42,16 @@ To setup the theme which is written by `<theme-author-account>` and called `<the
     github_user: themespace
     ```
 
-Then run:
+Then you can deploy to `gh-pages` branch of `github.com/themespace/<theme-name>` repository.
+
+## Deploying
 
 ``` sh
 git clean -f -d
+./script/setup <theme-author-account> <theme-name>
 rake install[<theme-name>]
+rake gen_deploy
 ```
-
-Then you can deploy to `gh-pages` branch of `github.com/themespace/<theme-name>` repository.
 
 ## License
 
