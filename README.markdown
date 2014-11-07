@@ -1,10 +1,10 @@
 ## About
 
-This is clone of [Octopress][] containing our themes for showcase.
+This is a clone of the [Octopress][] static site generator including a script functionality, which maintainers can use to publish *Themespace* theme previews.
 
 [Octopress]: https://github.com/imathis/octopress
 
-## Themes
+## Currently Included Themes
 
 - [Whitespace][] ([Preview](http://themespace.github.io/whitespace/))
 - [Koenigspress][] ([Preview](http://themespace.github.io/Koenigspress/))
@@ -12,9 +12,28 @@ This is clone of [Octopress][] containing our themes for showcase.
 [Whitespace]: https://github.com/lucaslew/whitespace
 [Koenigspress]: https://github.com/TheChymera/Koenigspress
 
-## How to Setup Theme
+## Usage
 
-To setup the theme which is written by `<theme-author-account>` and called `<theme-name>`, run `script/setup <theme-author-account> <theme-name>`. Then it modifies files below.
+Theme maintainers can publish an up-to-date standard-content preview of their theme by simply running the following from within a local clone of our repository:
+
+```
+git clean -f -d
+./script/setup <theme-author-account> <theme-name>
+rake install[<theme-name>]
+rake gen_deploy
+```
+
+####It is important to note that:
+
+* This *currently* onyl works with themes hosted on GitHub
+* To have a URL at which you can publish a preview, the theme in question needs first be cloned on *Themespace* as `themespace/<theme-name>`
+* To publish to *Themespace* (the `rake gen_deploy` part) you need to have push access to our theme clone
+
+*We are happy to assist maintainers with the latter two points, and we liberally accord push access to theme authors.*
+
+## Script Summary
+
+When creating a new theme preview - by running `script/setup <theme-author-account> <theme-name>` - the following files are modified:
 
 - [Rakefile](Rakefile):
     ```
@@ -42,18 +61,9 @@ To setup the theme which is written by `<theme-author-account>` and called `<the
     github_user: themespace
     ```
 
-Then you can deploy to `gh-pages` branch of `github.com/themespace/<theme-name>` repository.
+Previews are deployed to the respective `gh-pages` branches of the *Themespace* cloned repositories (e.g. `github.com/themespace/<theme-name>`).
 
-## Deploying
-
-``` sh
-git clean -f -d
-./script/setup <theme-author-account> <theme-name>
-rake install[<theme-name>]
-rake gen_deploy
-```
-
-## License
+## Licenses
 
 - [Octopress](https://github.com/imathis/octopress#license)
 - [Whitespace](https://github.com/lucaslew/whitespace#license)
