@@ -25,9 +25,9 @@ rake gen_deploy
 
 ####It is important to note that:
 
-* This *currently* onyl works with themes hosted on GitHub
-* To have a URL at which you can publish a preview, the theme in question needs first be cloned on *Themespace* as `themespace/<theme-name>`
-* To publish to *Themespace* (the `rake gen_deploy` part) you need to have push access to our theme clone
+* This *currently* only works with themes hosted on GitHub.
+* To publish a preview, the theme in question needs first be cloned on Themespace as `themespace/<theme-name>`.
+* To publish to Themespace (the `rake gen_deploy` part) you need to have push access to our theme clone.
 
 *We are happy to assist maintainers with the latter two points, and we liberally accord push access to theme authors.*
 
@@ -61,7 +61,7 @@ When creating a new theme preview - by running `script/setup <theme-author-accou
     github_user: themespace
     ```
 
-Previews are deployed to the respective `gh-pages` branches of the *Themespace* cloned repositories (e.g. `github.com/themespace/<theme-name>`).
+Previews are deployed to the `gh-pages` branches of our respective theme repository clones (e.g. `github.com/themespace/<theme-name>`).
 
 ## Licenses
 
