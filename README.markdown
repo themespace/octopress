@@ -1,6 +1,7 @@
 ## About
 
-This is a clone of the [Octopress][] static site generator including a script functionality, which maintainers can use to publish *Themespace* theme previews.
+This is a clone of the [Octopress][] static site generator including a script functionality, which maintainers can use to publish *Theme-Space* theme previews.
+A short summary article about the Theme-Space concept can be seen over [at Chymeric Tutorials](http://chymeric.eu/blog/2014/11/14/preview-octopress-themes-with-themespace/).
 
 [Octopress]: https://github.com/imathis/octopress
 
